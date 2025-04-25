@@ -23,23 +23,6 @@
 window.onload = () => {
     showSection('games'); // показываем по умолчанию секцию 'games'
 };
-// Открыть модальное окно
-function openDownloadMenu() {
-    document.getElementById("downloadMenu").style.display = "block";
-}
-
-// Закрыть модальное окно
-function closeDownloadMenu() {
-    document.getElementById("downloadMenu").style.display = "none";
-}
-
-// Закрытие модального окна при клике вне его
-window.onclick = function(event) {
-    if (event.target == document.getElementById("downloadMenu")) {
-        closeDownloadMenu();
-    }
-}
-
 
     </script>
 </head>
@@ -67,20 +50,14 @@ window.onclick = function(event) {
                 <h3>Кок-бору</h3>
                 <p>Кок-бору — народная игра, во время которой всадники борются за тушу козла. Важно не только завладеть трофеем и удержать его, но и забросить в тай-казан (ворота) команды-соперника.</p>
             </div>
-            <!-- Кнопка для скачивания -->
-            <button class="download-btn" onclick="openDownloadMenu()">Скачать игру</button>
-    
-            <!-- Модальное окно с выбором платформы -->
-            <div id="downloadMenu" class="modal">
-                <div class="modal-content">
-                    <span class="close" onclick="closeDownloadMenu()">&times;</span>
-                    <h3>Выберите платформу</h3>
-                    <ul>
-                        <li><a href="https://drive.google.com/file/d/104tNzoEXMKHTDznZBSobimaCnSeZi_G9/view?usp=drive_link" download>Windows</a></li>
-                        <li><a href="#" onclick="alert('Временно недоступно для Android'); return false;">Android</a></li>
-                        <li><a href="#" onclick="alert('Временно недоступно для iOS'); return false;">iOS</a></li>
-                    </ul>
-                    
+            
+            <!-- Блок выбора платформы (виден сразу) -->
+            <div class="download-section">
+                <h3>Скачать игру</h3>
+                <div class="platform-buttons">
+                    <a href="https://drive.google.com/file/d/104tNzoEXMKHTDznZBSobimaCnSeZi_G9/view?usp=drive_link" class="platform-btn" target="_blank">Windows</a>
+                    <a href="#" class="platform-btn disabled" onclick="alert('Временно недоступно для Android'); return false;">Android</a>
+                    <a href="#" class="platform-btn disabled" onclick="alert('Временно недоступно для iOS'); return false;">iOS</a>
                 </div>
             </div>
         </div>
